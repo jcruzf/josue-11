@@ -10,32 +10,5 @@ import ContentSection from "~/components/content-section.astro";
     <span class="text-primary">4:00 p.m</span>
   </Fragment>
 
-  <div id="countdown" class="flex flex-row justify-center gap-3">
-    <div
-      class="flex basis-1/4 flex-col items-center rounded bg-neutral-800 bg-opacity-25 p-3 backdrop-blur-xl"
-    >
-      <h2 class="gradient-text font-bold text-5xl" id="days">00</h2>
-      <small>dias</small>
-    </div>
-    <div
-      class="flex basis-1/4 flex-col items-center rounded bg-neutral-800 bg-opacity-25 p-3 backdrop-blur-xl"
-    >
-      <h2 class="gradient-text font-bold text-5xl" id="hours">00</h2>
-      <small>horas</small>
-    </div>
-    <div
-      class="flex basis-1/4 flex-col items-center rounded bg-neutral-800 bg-opacity-25 p-3 backdrop-blur-xl"
-    >
-      <h2 class="gradient-text font-bold text-5xl" id="minutes">00</h2>
-      <small>minutos</small>
-    </div>
-    <div
-      class="flex basis-1/4 flex-col items-center rounded bg-neutral-800 bg-opacity-25 p-3 backdrop-blur-xl"
-    >
-      <h2 class="gradient-text font-bold text-5xl" id="seconds">00</h2>
-      <small>segundos</small>
-    </div>
-  </div>
-
   <Image class="mt-2 w-32" src={logoFc24_animate} loading="eager" alt="FC24" />
 </ContentSection>
