@@ -51,7 +51,7 @@ const { generator, site } = Astro;
       <Splash />
       <div
         class="h-screen snap-start space-y-24 overflow-hidden bg-cover bg-center px-8 py-32"
-        style="background-image: url('src/assets/bg_triangles.jpg')"
+        style="background-image: url('/bg_triangles.jpg')"
       >
         <Intro />
       </div>
@@ -65,7 +65,7 @@ const { generator, site } = Astro;
           muted
           class="absolute -left-1 z-10 w-auto min-w-full max-w-none"
         >
-          <source src="../assets/fc24-video-bg.mp4" type="video/mp4" />
+          <source src="/fc24-video-bg.mp4" type="video/mp4" />
            Your browser does not support the video tag.
         </video>
         <Features />
@@ -80,7 +80,7 @@ const { generator, site } = Astro;
           muted
           class="absolute z-10 min-h-full w-auto min-w-full max-w-none"
         >
-          <source src="~/assets/fc24-haaland-goal-1x1.mp4" type="video/mp4" />
+          <source src="/fc24-haaland-goal-1x1.mp4" type="video/mp4" />
            Your browser does not support the video tag.
         </video>
       </div>

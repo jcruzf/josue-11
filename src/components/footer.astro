@@ -1,22 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import HeroImage from "~/components/hero-image.astro";
-import bgCancha from "~/assets/bg_cancha.png";
-
-const widths = [450, 800, 1200];
-const sizes = "100vw";
+import logoFc24animate from "~/assets/logo_fc24.webp";
 ---
 
 <footer class="relative flex h-64 items-center justify-center">
   <div class="absolute inset-0 overflow-hidden">
-    <HeroImage />
+    <h1 class="text-center font-extrabold text-white text-4xl">NO FALTES!</h1>
   </div>
-
-  <Image
-  class="h-full w-full object-cover"
-  src={bgCancha}
-  widths={widths}
-  sizes={sizes}
-  alt="Fair Play"
-/>
+  <Image class="-mt-6 w-40" src={logoFc24animate} loading="eager" alt="FC24" />
 </footer>
