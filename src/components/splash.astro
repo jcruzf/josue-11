@@ -1,45 +1,43 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon";
-import astronautImage from "~/assets/astronaut.png";
+import josueCardfc from "~/assets/josue_fc_card.png";
+import logoFc24 from "~/assets/fc24-logo.svg";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
-import GitHubCorner from "./github-corner.astro";
 
 const widths = [450, 800];
-const sizes = "(min-width: 640px) 42vw, 67vw";
+const sizes = "(min-width: 440px) 42vw, 67vw";
 ---
 
-<section class="relative h-full bg-black">
+<section class="relative h-full snap-start bg-neutral-800">
   <Starfield />
-  <GitHubCorner />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
-  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+  <div class="relative grid h-full place-items-center">
+    <Image class="mt-6 w-44" src={logoFc24} loading="eager" alt="FC24" />
     <h2
-      class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+      class="-mt-6 flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-      <Icon name="logomark" class="h-24 text-white md:h-32" />
-      <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
-      >
-        Build fast
-        <br /> websites,
-        <br /> faster.
+      <div class="gradient-text text-center font-extrabold text-3xl">
+        Te invito a <span class="text-white">festejar</span>
+        <br />
+        <span class="text-white">mi</span> cumpleaños
+        <br />
+        <span class="text-9xl">11</span>
       </div>
     </h2>
     <div
       id="astronaut"
-      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+      class="w-2/5 max-w-2xl self-start sm:w-8/12 sm:self-auto sm:justify-self-start"
     >
       <Image
         class="h-full w-full object-cover"
-        src={astronautImage}
+        src={josueCardfc}
         widths={widths}
         sizes={sizes}
         loading="eager"
-        alt="A floating astronaut in a space suit"
+        alt="Josue Cruz"
       />
     </div>
   </div>
