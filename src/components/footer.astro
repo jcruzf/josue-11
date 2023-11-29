@@ -3,9 +3,7 @@ import { Image } from "astro:assets";
 import logoFc24animate from "~/assets/logo_fc24.webp";
 ---
 
-<footer class="relative flex h-64 items-center justify-center">
-  <div class="absolute inset-0 overflow-hidden">
-    <h1 class="text-center font-extrabold text-white text-6xl">NO FALTES!</h1>
-  </div>
-  <Image class="-mt-6 w-40" src={logoFc24animate} loading="eager" alt="FC24" />
+<footer class="flex flex-col items-center m-auto">
+  <h1 class="text-center font-extrabold text-white text-6xl">NO FALTES!</h1>
+  <Image class="w-40" src={logoFc24animate} loading="eager" alt="FC24" />
 </footer>
