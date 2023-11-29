@@ -1,89 +1,31 @@
 ---
-import { Image } from "astro:assets";
-import logoFc24_animate from "~/assets/logo_fc24.gif";
+import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
 ---
 
-<ContentSection title="El próximo" id="intro">
+<ContentSection title="Just ship less" id="intro">
+  <Icon slot="eyebrow" name="logomark" class="h-32" />
   <Fragment slot="lead">
-    <span class="text-primary">sábado 2 de diciembre</span> a partir de las
-    <span class="text-primary">4:00 p.m</span>
+    Astro is a new kind of site builder for the
+    <span class="text-primary">modern</span> web.
+    <span class="text-primary">Lightning-fast</span>
+     performance meets <span class="text-primary">powerful</span> developer
+    experience.
   </Fragment>
-
-  <div id="countdown" class="flex flex-row justify-center gap-3">
-    <div
-      class="flex basis-1/4 flex-col items-center rounded bg-neutral-800 bg-opacity-25 p-3 backdrop-blur-xl"
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a
+      href="https://docs.astro.build/"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
-      <h2 class="gradient-text font-bold text-5xl" id="days">00</h2>
-      <small>dias</small>
-    </div>
-    <div
-      class="flex basis-1/4 flex-col items-center rounded bg-neutral-800 bg-opacity-25 p-3 backdrop-blur-xl"
+      <Icon pack="mdi" name="telescope" class="h-8" />
+      <span>Read the docs</span>
+    </a>
+    <a
+      href="https://astro.new/"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
-      <h2 class="gradient-text font-bold text-5xl" id="hours">00</h2>
-      <small>horas</small>
-    </div>
-    <div
-      class="flex basis-1/4 flex-col items-center rounded bg-neutral-800 bg-opacity-25 p-3 backdrop-blur-xl"
-    >
-      <h2 class="gradient-text font-bold text-5xl" id="minutes">00</h2>
-      <small>minutos</small>
-    </div>
-    <div
-      class="flex basis-1/4 flex-col items-center rounded bg-neutral-800 bg-opacity-25 p-3 backdrop-blur-xl"
-    >
-      <h2 class="gradient-text font-bold text-5xl" id="seconds">00</h2>
-      <small>segundos</small>
-    </div>
+      <Icon pack="mdi" name="rocket" class="h-8" />
+      <span>Try it out</span>
+    </a>
   </div>
-
-  <Image class="-mt-6 w-44" src={logoFc24_animate} loading="eager" alt="FC24" />
 </ContentSection>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const days = document.getElementById("days");
-    const hours = document.getElementById("hours");
-    const minutes = document.getElementById("minutes");
-    const seconds = document.getElementById("seconds");
-
-    // target date
-    const targetTime = new Date(`December 02 2023 16:00:00`);
-    const currentTime = new Date();
-    let diff = targetTime - currentTime;
-
-    const updateCountdown = () => {
-      console.log(diff);
-
-      const remainingDays = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24));
-      const remainingHours = Math.max(Math.floor(diff / 1000 / 60 / 60) % 24);
-      const remainingMinutes = Math.max(Math.floor(diff / 1000 / 60) % 60);
-      const remainingSeconds = Math.max(Math.floor(diff / 1000) % 60);
-
-      if (
-        remainingDays === 0 &&
-        remainingHours === 0 &&
-        remainingMinutes === 0 &&
-        remainingSeconds === 0
-      ) {
-        clearInterval(countdownInterval);
-      }
-
-      days.innerHTML = remainingDays;
-      hours.innerHTML =
-        remainingHours < 10 ? "0" + remainingHours : remainingHours;
-      minutes.innerHTML =
-        remainingMinutes < 10 ? "0" + remainingMinutes : remainingMinutes;
-      seconds.innerHTML =
-        remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
-    };
-
-    const countdownInterval = setInterval(() => {
-      updateCountdown();
-      diff -= 1000;
-      if (diff < 0) {
-        diff = 0; // Asegura que diff no sea negativo
-      }
-    }, 1000);
-  });
-</script>
