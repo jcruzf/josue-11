@@ -57,17 +57,9 @@ const { generator, site } = Astro;
       </div>
 
       <div
-        class="justify-left relative flex h-screen snap-start items-center space-y-24 overflow-hidden px-8 py-32"
+       class="h-screen snap-start space-y-24 overflow-hidden bg-cover bg-center px-8 py-32"
+        style="background-image: url('/fc24-video-bg.webp')"
       >
-        <video
-          autoplay
-          loop
-          muted
-          class="absolute -left-1 z-10 w-auto min-w-full max-w-none"
-        >
-          <source src="/fc24-video-bg.mp4" type="video/mp4" />
-           Your browser does not support the video tag.
-        </video>
         <Features />
       </div>
 
