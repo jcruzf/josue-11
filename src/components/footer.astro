@@ -1,9 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import HeroImage from "~/components/hero-image.astro";
+import bgCancha from "~/assets/bg_cancha.png";
 ---
 
 <footer class="relative flex h-64 items-center justify-center">
   <div class="absolute inset-0 overflow-hidden">
     <HeroImage />
   </div>
+
+  <Image
+  class="h-full w-full object-cover"
+  src={bgCancha}
+  widths={widths}
+  sizes={sizes}
+  alt="Fair Play"
+/>
 </footer>
